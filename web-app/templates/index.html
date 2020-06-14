@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>DDoS attack prediction</title>
+  </head>
+<body>
+ <div class="login container text-center" style="margin-top: 100px;">
+  <h1 style="margin-bottom: 20px;">Category of DDoS attack</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}" method="post">
+  <div class="form-group">
+    <label for="avg_dur">Average duration of packet</label>
+     <input type="number" name="avg_dur" placeholder="Average duration of packet" required="required" step="0.000001" />
+  </div>
+  <div class="form-group">
+    <label for="stddev_dur">Standard deviation of packet</label>
+    <input type="number" name="stddev_dur" placeholder="Standard deviation of packet" required="required" step="0.000001"/>
+  </div>
+    <div class="form-group">
+    <label for="min_dur">Minimum duration of packet</label>
+   <input type="number" name="min_dur" placeholder="Minimum duration of packet" required="required" step="0.000001"/>
+  </div>
+  <div class="form-group">
+    <label for="max_dur">Maximum duration of packet</label>
+       <input type="number" name="max_dur" placeholder="Maximum duration of packet" required="required" step="0.000001"/>
+  </div>
+    <div class="form-group">
+    <label for="srate">Source to destination speed</label>
+  <input type="number" name="srate" placeholder="Source to destination speed" required="required" step="0.000001"/>
+  </div>
+  <div class="form-group">
+    <label for="drate">Destination to source speed</label>
+   <input type="number" name="drate" placeholder="Destination to source speed" required="required" step="0.000001"/>
+  </div>
+  
+  <button type="submit" class="btn btn-dark btn-default">Predict</button>
+</form> 
+
+    <form  action="{{ url_for('predict')}}"method="post">
+   
+       
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+   <h3>
+ {% if prediction_text == "Category is 1" %}
+      Its a DDoS Atack !!
+      
+ {% else %}
+      No Attacks.. Normal packet transfer.
+{% endif %}
+</h3>
+
+ </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+
+</html>
