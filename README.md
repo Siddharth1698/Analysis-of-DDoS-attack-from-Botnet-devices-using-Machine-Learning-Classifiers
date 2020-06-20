@@ -1,7 +1,7 @@
 # Analysis-of-DDoS-attack-from-Botnet-devices-using-Machine-Learning-Classifiers (Research Project)
 A project that is used to analyse multiple machine learning classifers for DDoS detection from botnets and finalize the best classifer.
 
-Abstract of project: 
+Abstract:
 
 An increasing number of Internet of Things (IoT) devices are connecting to the Internet, yet many of these devices are fundamentally insecure, exposing the Internet to a variety of attacks.
 Botnets such as Mirai have used insecure consumer IoT devices to conduct distributed denial of service (DDoS) attacks on critical Internet infrastructure. This motivates the development of new techniques to automatically detect consumer IoT attack traffic. In this paper, we study DDos attack by botnet infected Iot devices using multiple machine learning classifiers.
