@@ -5,7 +5,7 @@ pytz==2020.1
 joblib==0.14.1
 scikit-learn==0.22.2
 scipy==1.4.1
-Jinja2==2.11.2
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 Werkzeug==1.0.1
 click==7.1.2
